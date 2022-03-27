@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stages ('test {
+    stages ('test') {
       steps {
       sh '''#!/bin/bash
       python3v-m venv test3
@@ -9,7 +9,7 @@ pipeline {
       pip install pip --upgrade
       pip install pytest
       py.test --verbose --junit-xml sources/test_calc.py
-      '''
+      
       }
       post {
       always {
